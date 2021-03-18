@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--p命名空间注入，可以直接注入属性的值:property-->
+    <bean id="user" class="com.yi.pojo.User" p:name="易玮晟" p:age="18"/>
+    <!--c命名空间注入，通过构造器注入属性的值:Constructor-->
+    <!--scope:bean作用域
+    singleton：单例模式（默认）
+    prototype:原型模式（每次从容器get的时候，都会产生一个新对象）
+    request,session,application,这些只能在web开发中使用到
+    -->
+    <bean id="user2" class="com.yi.pojo.User" c:name="易大大" c:age="19" scope="prototype"/>
+
+</beans>
